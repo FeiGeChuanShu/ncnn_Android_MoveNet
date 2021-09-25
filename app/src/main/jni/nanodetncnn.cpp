@@ -183,20 +183,24 @@ JNIEXPORT jboolean JNICALL Java_com_tencent_ncnnbodypose_NcnnBodypose_loadModel(
     const char* modeltypes[] =
     {
         "lightning",
+        "thunder",
     };
 
     const int target_sizes[] =
     {
         192,
+        256,
     };
 
     const float mean_vals[][3] =
     {
         {127.5f, 127.5f,  127.5f},
+        {127.5f, 127.5f,  127.5f},
     };
 
     const float norm_vals[][3] =
     {
+        {1/ 127.5f, 1 / 127.5f, 1 / 127.5f},
         {1/ 127.5f, 1 / 127.5f, 1 / 127.5f},
     };
 

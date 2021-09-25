@@ -19,7 +19,6 @@
 
 #include "cpu.h"
 
-const int feature_size = 48;
 const int num_joints = 17;
 
 template<class ForwardIterator>
@@ -33,18 +32,6 @@ NanoDet::NanoDet()
     blob_pool_allocator.set_size_compare_ratio(0.f);
     workspace_pool_allocator.set_size_compare_ratio(0.f);
 
-
-    for (int i = 0; i < feature_size; i++)
-    {
-        std::vector<float> x, y;
-        for (int j = 0; j < feature_size; j++)
-        {
-            x.push_back(j);
-            y.push_back(i);
-        }
-        dist_y.push_back(y);
-        dist_x.push_back(x);
-    }
 }
 
 int NanoDet::load(const char* modeltype, int _target_size, const float* _mean_vals, const float* _norm_vals, bool use_gpu)
@@ -118,7 +105,28 @@ int NanoDet::load(AAssetManager* mgr, const char* modeltype, int _target_size, c
     norm_vals[0] = _norm_vals[0];
     norm_vals[1] = _norm_vals[1];
     norm_vals[2] = _norm_vals[2];
-
+    
+    if(target_size == 192)
+    {
+        feature_size = 48;
+        kpt_scale = 0.02083333395421505;
+    }
+    else
+    {
+        feature_size = 64;
+        kpt_scale = 0.015625;
+    }
+    for (int i = 0; i < feature_size; i++)
+    {
+        std::vector<float> x, y;
+        for (int j = 0; j < feature_size; j++)
+        {
+            x.push_back(j);
+            y.push_back(i);
+        }
+        dist_y.push_back(y);
+        dist_x.push_back(x);
+    }
     return 0;
 }
 
@@ -221,8 +229,8 @@ void NanoDet::detect_pose(cv::Mat &rgb, std::vector<keypoint> &points)
         float kpt_offset_x = offset_data[kpts_ys[i] * feature_size * num_joints*2 + kpts_xs[i] * num_joints * 2 + i * 2];
         float kpt_offset_y = offset_data[kpts_ys[i] * feature_size * num_joints * 2 + kpts_xs[i] * num_joints * 2 + i * 2+1];
 
-        float x = (kpts_xs[i] + kpt_offset_y) * 0.02083333395421505 * target_size;
-        float y = (kpts_ys[i] + kpt_offset_x) * 0.02083333395421505 * target_size;
+        float x = (kpts_xs[i] + kpt_offset_y) * kpt_scale * target_size;
+        float y = (kpts_ys[i] + kpt_offset_x) * kpt_scale * target_size;
 
         keypoint kpt;
         kpt.x = (x - (wpad / 2)) / scale;

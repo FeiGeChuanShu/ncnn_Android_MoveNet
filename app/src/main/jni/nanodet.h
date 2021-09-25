@@ -42,7 +42,8 @@ private:
 
     void detect_pose(cv::Mat &rgb, std::vector<keypoint> &points);
     ncnn::Net poseNet;
-
+    int feature_size;
+    float kpt_scale;
     int target_size;
     float mean_vals[3];
     float norm_vals[3];
