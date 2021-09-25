@@ -5,7 +5,7 @@ this project is a ncnn Android demo for MoveNet, it depends on ncnn library and 
 https://github.com/Tencent/ncnn  
 https://github.com/nihui/opencv-mobile
 ## model support:  
-1.movenet-singlepose-lightning3(from [tfhub](https://tfhub.dev/google/movenet/singlepose/lightning/3))  
+1.movenet-singlepose-lightning4(from [tfhub](https://tfhub.dev/google/movenet/singlepose/lightning/4))  
 
 ## how to build and run
 ### step1
