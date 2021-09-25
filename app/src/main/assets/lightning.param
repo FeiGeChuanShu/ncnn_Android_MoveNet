@@ -1,0 +1,114 @@
+7767517
+112 128
+Input                    input                    0 1 input
+MemoryData               truediv_2_add_11_y:0     0 1 truediv_2_add_11_y:0 0=1 1=48 2=48
+Convolution              Conv__359                1 1 input Conv1_relu_Relu6__bn:0 0=32 1=3 3=2 15=1 16=1 5=1 6=864 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__360                1 1 Conv1_relu_Relu6__bn:0 _expanded_conv_depthwise_relu_Relu6:0 0=32 1=3 4=1 5=1 6=288 7=32 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__361                1 1 _expanded_conv_depthwise_relu_Relu6:0 Conv__361:0 0=16 1=1 5=1 6=512
+Convolution              Conv__362                1 1 Conv__361:0 _block_1_expand_relu_Relu6:0 0=96 1=1 5=1 6=1536 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__363                1 1 _block_1_expand_relu_Relu6:0 _block_1_depthwise_relu_Relu6:0 0=96 1=3 3=2 15=1 16=1 5=1 6=864 7=96 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__364                1 1 _block_1_depthwise_relu_Relu6:0 Conv__364:0 0=24 1=1 5=1 6=2304
+Split                    splitncnn_0              1 2 Conv__364:0 Conv__364:0_splitncnn_0 Conv__364:0_splitncnn_1
+Convolution              Conv__367                1 1 Conv__364:0_splitncnn_1 _block_2_expand_relu_Relu6:0 0=144 1=1 5=1 6=3456 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__368                1 1 _block_2_expand_relu_Relu6:0 _block_2_depthwise_relu_Relu6:0 0=144 1=3 4=1 5=1 6=1296 7=144 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__369                1 1 _block_2_depthwise_relu_Relu6:0 Conv__369:0 0=24 1=1 5=1 6=3456
+BinaryOp                 _block_2_add_add         2 1 Conv__364:0_splitncnn_0 Conv__369:0 _block_2_add_add:0
+Split                    splitncnn_1              1 2 _block_2_add_add:0 _block_2_add_add:0_splitncnn_0 _block_2_add_add:0_splitncnn_1
+Convolution              Conv__442                1 1 _block_2_add_add:0_splitncnn_1 Conv__442:0 0=24 1=1 5=1 6=576
+Convolution              Conv__370                1 1 _block_2_add_add:0_splitncnn_0 _block_3_expand_relu_Relu6:0 0=144 1=1 5=1 6=3456 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__371                1 1 _block_3_expand_relu_Relu6:0 _block_3_depthwise_relu_Relu6:0 0=144 1=3 3=2 15=1 16=1 5=1 6=1296 7=144 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__372                1 1 _block_3_depthwise_relu_Relu6:0 Conv__372:0 0=32 1=1 5=1 6=4608
+Split                    splitncnn_2              1 2 Conv__372:0 Conv__372:0_splitncnn_0 Conv__372:0_splitncnn_1
+Convolution              Conv__375                1 1 Conv__372:0_splitncnn_1 _block_4_expand_relu_Relu6:0 0=192 1=1 5=1 6=6144 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__376                1 1 _block_4_expand_relu_Relu6:0 _block_4_depthwise_relu_Relu6:0 0=192 1=3 4=1 5=1 6=1728 7=192 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__377                1 1 _block_4_depthwise_relu_Relu6:0 Conv__377:0 0=32 1=1 5=1 6=6144
+BinaryOp                 _block_4_add_add         2 1 Conv__372:0_splitncnn_0 Conv__377:0 _block_4_add_add:0
+Split                    splitncnn_3              1 2 _block_4_add_add:0 _block_4_add_add:0_splitncnn_0 _block_4_add_add:0_splitncnn_1
+Convolution              Conv__380                1 1 _block_4_add_add:0_splitncnn_1 _block_5_expand_relu_Relu6:0 0=192 1=1 5=1 6=6144 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__381                1 1 _block_5_expand_relu_Relu6:0 _block_5_depthwise_relu_Relu6:0 0=192 1=3 4=1 5=1 6=1728 7=192 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__382                1 1 _block_5_depthwise_relu_Relu6:0 Conv__382:0 0=32 1=1 5=1 6=6144
+BinaryOp                 _block_5_add_add         2 1 _block_4_add_add:0_splitncnn_0 Conv__382:0 _block_5_add_add:0
+Split                    splitncnn_4              1 2 _block_5_add_add:0 _block_5_add_add:0_splitncnn_0 _block_5_add_add:0_splitncnn_1
+Convolution              Conv__438                1 1 _block_5_add_add:0_splitncnn_1 Conv__438:0 0=32 1=1 5=1 6=1024
+Convolution              Conv__383                1 1 _block_5_add_add:0_splitncnn_0 _block_6_expand_relu_Relu6:0 0=192 1=1 5=1 6=6144 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__384                1 1 _block_6_expand_relu_Relu6:0 _block_6_depthwise_relu_Relu6:0 0=192 1=3 3=2 15=1 16=1 5=1 6=1728 7=192 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__385                1 1 _block_6_depthwise_relu_Relu6:0 Conv__385:0 0=64 1=1 5=1 6=12288
+Split                    splitncnn_5              1 2 Conv__385:0 Conv__385:0_splitncnn_0 Conv__385:0_splitncnn_1
+Convolution              Conv__388                1 1 Conv__385:0_splitncnn_1 _block_7_expand_relu_Relu6:0 0=384 1=1 5=1 6=24576 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__389                1 1 _block_7_expand_relu_Relu6:0 _block_7_depthwise_relu_Relu6:0 0=384 1=3 4=1 5=1 6=3456 7=384 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__390                1 1 _block_7_depthwise_relu_Relu6:0 Conv__390:0 0=64 1=1 5=1 6=24576
+BinaryOp                 _block_7_add_add         2 1 Conv__385:0_splitncnn_0 Conv__390:0 _block_7_add_add:0
+Split                    splitncnn_6              1 2 _block_7_add_add:0 _block_7_add_add:0_splitncnn_0 _block_7_add_add:0_splitncnn_1
+Convolution              Conv__393                1 1 _block_7_add_add:0_splitncnn_1 _block_8_expand_relu_Relu6:0 0=384 1=1 5=1 6=24576 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__394                1 1 _block_8_expand_relu_Relu6:0 _block_8_depthwise_relu_Relu6:0 0=384 1=3 4=1 5=1 6=3456 7=384 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__395                1 1 _block_8_depthwise_relu_Relu6:0 Conv__395:0 0=64 1=1 5=1 6=24576
+BinaryOp                 _block_8_add_add         2 1 _block_7_add_add:0_splitncnn_0 Conv__395:0 _block_8_add_add:0
+Split                    splitncnn_7              1 2 _block_8_add_add:0 _block_8_add_add:0_splitncnn_0 _block_8_add_add:0_splitncnn_1
+Convolution              Conv__398                1 1 _block_8_add_add:0_splitncnn_1 _block_9_expand_relu_Relu6:0 0=384 1=1 5=1 6=24576 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__399                1 1 _block_9_expand_relu_Relu6:0 _block_9_depthwise_relu_Relu6:0 0=384 1=3 4=1 5=1 6=3456 7=384 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__400                1 1 _block_9_depthwise_relu_Relu6:0 Conv__400:0 0=64 1=1 5=1 6=24576
+BinaryOp                 _block_9_add_add         2 1 _block_8_add_add:0_splitncnn_0 Conv__400:0 _block_9_add_add:0
+Split                    splitncnn_8              1 2 _block_9_add_add:0 _block_9_add_add:0_splitncnn_0 _block_9_add_add:0_splitncnn_1
+Convolution              Conv__434                1 1 _block_9_add_add:0_splitncnn_1 Conv__434:0 0=64 1=1 5=1 6=4096
+Convolution              Conv__401                1 1 _block_9_add_add:0_splitncnn_0 _block_10_expand_relu_Relu6:0 0=384 1=1 5=1 6=24576 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__402                1 1 _block_10_expand_relu_Relu6:0 _block_10_depthwise_relu_Relu6:0 0=384 1=3 4=1 5=1 6=3456 7=384 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__403                1 1 _block_10_depthwise_relu_Relu6:0 Conv__403:0 0=96 1=1 5=1 6=36864
+Split                    splitncnn_9              1 2 Conv__403:0 Conv__403:0_splitncnn_0 Conv__403:0_splitncnn_1
+Convolution              Conv__406                1 1 Conv__403:0_splitncnn_1 _block_11_expand_relu_Relu6:0 0=576 1=1 5=1 6=55296 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__407                1 1 _block_11_expand_relu_Relu6:0 _block_11_depthwise_relu_Relu6:0 0=576 1=3 4=1 5=1 6=5184 7=576 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__408                1 1 _block_11_depthwise_relu_Relu6:0 Conv__408:0 0=96 1=1 5=1 6=55296
+BinaryOp                 _block_11_add_add        2 1 Conv__403:0_splitncnn_0 Conv__408:0 _block_11_add_add:0
+Split                    splitncnn_10             1 2 _block_11_add_add:0 _block_11_add_add:0_splitncnn_0 _block_11_add_add:0_splitncnn_1
+Convolution              Conv__411                1 1 _block_11_add_add:0_splitncnn_1 _block_12_expand_relu_Relu6:0 0=576 1=1 5=1 6=55296 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__412                1 1 _block_12_expand_relu_Relu6:0 _block_12_depthwise_relu_Relu6:0 0=576 1=3 4=1 5=1 6=5184 7=576 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__413                1 1 _block_12_depthwise_relu_Relu6:0 Conv__413:0 0=96 1=1 5=1 6=55296
+BinaryOp                 _block_12_add_add        2 1 _block_11_add_add:0_splitncnn_0 Conv__413:0 _block_12_add_add:0
+Convolution              Conv__414                1 1 _block_12_add_add:0 _block_13_expand_relu_Relu6:0 0=576 1=1 5=1 6=55296 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__415                1 1 _block_13_expand_relu_Relu6:0 _block_13_depthwise_relu_Relu6:0 0=576 1=3 3=2 15=1 16=1 5=1 6=5184 7=576 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__416                1 1 _block_13_depthwise_relu_Relu6:0 Conv__416:0 0=160 1=1 5=1 6=92160
+Split                    splitncnn_11             1 2 Conv__416:0 Conv__416:0_splitncnn_0 Conv__416:0_splitncnn_1
+Convolution              Conv__419                1 1 Conv__416:0_splitncnn_1 _block_14_expand_relu_Relu6:0 0=960 1=1 5=1 6=153600 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__420                1 1 _block_14_expand_relu_Relu6:0 _block_14_depthwise_relu_Relu6:0 0=960 1=3 4=1 5=1 6=8640 7=960 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__421                1 1 _block_14_depthwise_relu_Relu6:0 Conv__421:0 0=160 1=1 5=1 6=153600
+BinaryOp                 _block_14_add_add        2 1 Conv__416:0_splitncnn_0 Conv__421:0 _block_14_add_add:0
+Split                    splitncnn_12             1 2 _block_14_add_add:0 _block_14_add_add:0_splitncnn_0 _block_14_add_add:0_splitncnn_1
+Convolution              Conv__424                1 1 _block_14_add_add:0_splitncnn_1 _block_15_expand_relu_Relu6:0 0=960 1=1 5=1 6=153600 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__425                1 1 _block_15_expand_relu_Relu6:0 _block_15_depthwise_relu_Relu6:0 0=960 1=3 4=1 5=1 6=8640 7=960 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__426                1 1 _block_15_depthwise_relu_Relu6:0 Conv__426:0 0=160 1=1 5=1 6=153600
+BinaryOp                 _block_15_add_add        2 1 _block_14_add_add:0_splitncnn_0 Conv__426:0 _block_15_add_add:0
+Convolution              Conv__427                1 1 _block_15_add_add:0 _block_16_expand_relu_Relu6:0 0=960 1=1 5=1 6=153600 9=3 -23310=2,0.000000e+00,6.000000e+00
+ConvolutionDepthWise     Conv__428                1 1 _block_16_expand_relu_Relu6:0 _block_16_depthwise_relu_Relu6:0 0=960 1=3 4=1 5=1 6=8640 7=960 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__429                1 1 _block_16_depthwise_relu_Relu6:0 Conv__429:0 0=320 1=1 5=1 6=307200
+Convolution              Conv__430                1 1 Conv__429:0 _out_relu_Relu6__Conv_1_bn_FusedBatchNormV3__Conv_1_Conv2D:0 0=1280 1=1 5=1 6=409600 9=3 -23310=2,0.000000e+00,6.000000e+00
+Convolution              Conv__431                1 1 _out_relu_Relu6__Conv_1_bn_FusedBatchNormV3__Conv_1_Conv2D:0 Conv__431:0 0=64 1=1 5=1 6=81920
+Interp                   Resize__242              1 1 Conv__431:0 Resize__242:0 0=2 3=12 4=12
+BinaryOp                 _tf.__operators__.add_AddV2 2 1 Resize__242:0 Conv__434:0 _tf.__operators__.add_AddV2:0
+ConvolutionDepthWise     depthwise_17             1 1 _tf.__operators__.add_AddV2:0 depthwise_17:0 0=64 1=3 4=1 6=576 7=64
+Convolution              Conv__435                1 1 depthwise_17:0 _re_lu_Relu__batch_normalization_FusedBatchNormV3_separable_conv2d_bias__separable_conv2d_BiasAdd__separable_conv2d_1_separable_conv2d_depthwise__separable_conv2d_separable_conv2d1:0 0=32 1=1 5=1 6=2048 9=1
+Interp                   Resize__261              1 1 _re_lu_Relu__batch_normalization_FusedBatchNormV3_separable_conv2d_bias__separable_conv2d_BiasAdd__separable_conv2d_1_separable_conv2d_depthwise__separable_conv2d_separable_conv2d1:0 Resize__261:0 0=2 3=24 4=24
+BinaryOp                 _tf.__operators__.add_1_AddV2 2 1 Resize__261:0 Conv__438:0 _tf.__operators__.add_1_AddV2:0
+ConvolutionDepthWise     depthwise_18             1 1 _tf.__operators__.add_1_AddV2:0 depthwise_18:0 0=32 1=3 4=1 6=288 7=32
+Convolution              Conv__439                1 1 depthwise_18:0 _re_lu_1_Relu__batch_normalization_1_FusedBatchNormV3_separable_conv2d_1_bias__separable_conv2d_1_BiasAdd_kpt_regress_0_separable_conv2d_5_separable_conv2d_depthwise__separable_conv2d_1_separable_conv2d1:0 0=24 1=1 5=1 6=768 9=1
+Interp                   Resize__280              1 1 _re_lu_1_Relu__batch_normalization_1_FusedBatchNormV3_separable_conv2d_1_bias__separable_conv2d_1_BiasAdd_kpt_regress_0_separable_conv2d_5_separable_conv2d_depthwise__separable_conv2d_1_separable_conv2d1:0 Resize__280:0 0=2 3=48 4=48
+BinaryOp                 _tf.__operators__.add_2_AddV2 2 1 Resize__280:0 Conv__442:0 _tf.__operators__.add_2_AddV2:0
+ConvolutionDepthWise     depthwise_19             1 1 _tf.__operators__.add_2_AddV2:0 depthwise_19:0 0=24 1=3 4=1 6=216 7=24
+Convolution              Conv__443                1 1 depthwise_19:0 _re_lu_2_Relu:0 0=24 1=1 5=1 6=576 9=1
+Split                    splitncnn_13             1 4 _re_lu_2_Relu:0 _re_lu_2_Relu:0_splitncnn_0 _re_lu_2_Relu:0_splitncnn_1 _re_lu_2_Relu:0_splitncnn_2 _re_lu_2_Relu:0_splitncnn_3
+ConvolutionDepthWise     depthwise_23             1 1 _re_lu_2_Relu:0_splitncnn_3 depthwise_23:0 0=24 1=3 4=1 6=216 7=24
+Convolution              Conv__448                1 1 depthwise_23:0 kpt_regress_0_re_lu_5_Relu_kpt_regress:0 0=96 1=1 5=1 6=2304 9=1
+Convolution              Conv__449                1 1 kpt_regress_0_re_lu_5_Relu_kpt_regress:0 Conv__449:0 0=34 1=1 5=1 6=3264
+Permute                  Conv2D_49__298           1 1 Conv__449:0 regress 0=3
+ConvolutionDepthWise     depthwise_22             1 1 _re_lu_2_Relu:0_splitncnn_2 depthwise_22:0 0=24 1=3 4=1 6=216 7=24
+Convolution              Conv__450                1 1 depthwise_22:0 kpt_offset_0_re_lu_6_Relu_kpt_offset:0 0=96 1=1 5=1 6=2304 9=1
+Convolution              Conv__451                1 1 kpt_offset_0_re_lu_6_Relu_kpt_offset:0 Conv__451:0 0=34 1=1 5=1 6=3264
+Permute                  Conv2D_47__307           1 1 Conv__451:0 offset 0=3
+ConvolutionDepthWise     depthwise_21             1 1 _re_lu_2_Relu:0_splitncnn_1 depthwise_21:0 0=24 1=3 4=1 6=216 7=24
+Convolution              Conv__452                1 1 depthwise_21:0 kpt_heatmap_0_re_lu_4_Relu_kpt_heatmap:0 0=96 1=1 5=1 6=2304 9=1
+Convolution              Conv__453                1 1 kpt_heatmap_0_re_lu_4_Relu_kpt_heatmap:0 Sigmoid:0 0=17 1=1 5=1 6=1632 9=4
+Permute                  Transpose__501           1 1 Sigmoid:0 heatmap 0=3
+ConvolutionDepthWise     depthwise_20             1 1 _re_lu_2_Relu:0_splitncnn_0 depthwise_20:0 0=24 1=3 4=1 6=216 7=24
+Convolution              Conv__456                1 1 depthwise_20:0 center_0_re_lu_3_Relu_center:0 0=96 1=1 5=1 6=2304 9=1
+Convolution              Conv__457                1 1 center_0_re_lu_3_Relu_center:0 Sigmoid_1:0 0=1 1=1 5=1 6=96 9=4
+Reshape                  Conv2D_43__325           1 1 Sigmoid_1:0 Conv2D_43__325:0 0=1 1=48 2=48
+BinaryOp                 truediv_2_add_11         2 1 Conv2D_43__325:0 truediv_2_add_11_y:0 truediv_2_add_11:0 0=2
+Reshape                  Reshape_2                1 1 truediv_2_add_11:0 center 0=1 1=-1
