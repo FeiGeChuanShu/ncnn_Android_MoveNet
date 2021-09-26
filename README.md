@@ -27,4 +27,5 @@ https://github.com/nihui/opencv-mobile
 ![](result.gif)  
 ## reference:  
 https://github.com/nihui/ncnn-android-nanodet  
-https://tfhub.dev/google/movenet/singlepose/lightning/3  
+https://tfhub.dev/google/movenet/singlepose/lightning/4  
+https://tfhub.dev/google/movenet/singlepose/thunder/4  
