@@ -1,5 +1,5 @@
 # ncnn_Android_MoveNet
-Android MoveNet single human pose estimation by ncnn
+Android MoveNet single human pose estimation and multipose by ncnn
 
 this project is a ncnn Android demo for MoveNet, it depends on ncnn library and opencv.  
 https://github.com/Tencent/ncnn  
@@ -7,6 +7,7 @@ https://github.com/nihui/opencv-mobile
 ## model support:  
 1.movenet-singlepose-lightningv4(from [tfhub](https://tfhub.dev/google/movenet/singlepose/lightning/4))    
 2.movenet-singlepose-thunderv4(from [tfhub](https://tfhub.dev/google/movenet/singlepose/thunder/4))  
+3.movenet-multipose-lightning(from [tfhub](https://tfhub.dev/google/movenet/multipose/lightning/1))  
 
 ## how to build and run
 ### step1
@@ -29,3 +30,4 @@ https://github.com/nihui/opencv-mobile
 https://github.com/nihui/ncnn-android-nanodet  
 https://tfhub.dev/google/movenet/singlepose/lightning/4  
 https://tfhub.dev/google/movenet/singlepose/thunder/4  
+https://tfhub.dev/google/movenet/multipose/lightning/1  
