@@ -25,7 +25,8 @@ https://github.com/nihui/opencv-mobile
 ### step3
 * Open this project with Android Studio, build it and enjoy!
 ## result  
-![](result.gif)  
+![](singlepose.gif)  
+![](multipose.gif)  
 ## reference:  
 https://github.com/nihui/ncnn-android-nanodet  
 https://tfhub.dev/google/movenet/singlepose/lightning/4  

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">bodypose_demo</string>
+    <string-array name="model_array">
+        <item>192x256</item>
+        <item>256x320</item>
+        <item>480x640</item>
+    </string-array>
+    <string-array name="cpugpu_array">
+        <item>CPU</item>
+        <item>GPU</item>
+    </string-array>
+</resources>
