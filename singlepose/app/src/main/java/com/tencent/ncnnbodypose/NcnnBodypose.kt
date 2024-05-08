@@ -11,20 +11,20 @@
 // under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 // CONDITIONS OF ANY KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations under the License.
+package com.tencent.ncnnbodypose
 
-package com.tencent.ncnnbodypose;
+import android.content.res.AssetManager
+import android.view.Surface
 
-import android.content.res.AssetManager;
-import android.view.Surface;
+class NcnnBodypose {
+    external fun loadModel(mgr: AssetManager?, modelid: Int, cpugpu: Int): Boolean
+    external fun openCamera(facing: Int): Boolean
+    external fun closeCamera(): Boolean
+    external fun setOutputWindow(surface: Surface?): Boolean
 
-public class NcnnBodypose
-{
-    public native boolean loadModel(AssetManager mgr, int modelid, int cpugpu);
-    public native boolean openCamera(int facing);
-    public native boolean closeCamera();
-    public native boolean setOutputWindow(Surface surface);
-
-    static {
-        System.loadLibrary("ncnnbodypose");
+    companion object {
+        init {
+            System.loadLibrary("ncnnbodypose")
+        }
     }
 }
